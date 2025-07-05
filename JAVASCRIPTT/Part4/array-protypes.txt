@@ -1,0 +1,199 @@
+1. push()
+Use: Array ke end mein ek ya zyada elements add karta hai.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3];
+arr.push(4);
+console.log(arr); // [1, 2, 3, 4]
+
+
+2. pop()
+Use: Array ke last element ko remove karta hai aur us element ko return karta hai.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3];
+let removed = arr.pop();
+console.log(removed); // 3
+console.log(arr); // [1, 2]
+
+
+3. shift()
+Use: Array ke first element ko remove karta hai aur us element ko return karta hai.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3];
+let removed = arr.shift();
+console.log(removed); // 1
+console.log(arr); // [2, 3]
+
+
+4. unshift()
+Use: Array ke starting mein ek ya zyada elements add karta hai.
+Example:
+javascript
+Copy code
+let arr = [2, 3];
+arr.unshift(1);
+console.log(arr); // [1, 2, 3]
+
+
+5. slice()
+Use: Array ka ek shallow copy banata hai kisi specific range ke elements ko le kar (original array modify nahi hota).
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3, 4];
+let slicedArr = arr.slice(1, 3); // Index 1 se 3 tak, 3 exclude hoga
+console.log(slicedArr); // [2, 3]
+
+
+6. splice()
+Use: Array mein elements ko add ya remove karta hai. Ye original array ko modify karta hai.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3, 4];
+arr.splice(1, 2); // Index 1 se 2 elements remove karega
+console.log(arr); // [1, 4]
+
+
+7. forEach()
+Use: Har ek array element par iterate karta hai, aur callback function ko execute karta hai.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3];
+arr.forEach((num) => console.log(num * 2)); // 2, 4, 6
+
+
+8. map()
+Use: Array ke har element par callback function apply karke ek naya array return karta hai (original array modify nahi hota).
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3];
+let doubled = arr.map((num) => num * 2);
+console.log(doubled); // [2, 4, 6]
+
+
+9. filter()
+Use: Array ke elements ko filter karta hai jo callback function ke condition ko meet karte hain, aur naya array return karta hai.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3, 4];
+let even = arr.filter((num) => num % 2 === 0);
+console.log(even); // [2, 4]
+
+
+10. reduce()
+Use: Array ke elements ko ek single value mein reduce karta hai, by repeatedly applying the callback function.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3, 4];
+let sum = arr.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); // 10
+
+
+11. find()
+Use: Array mein pehla element return karta hai jo condition ko satisfy karta hai (jo callback function mein diya hai).
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3, 4];
+let found = arr.find((num) => num > 2);
+console.log(found); // 3
+
+
+12. findIndex()
+Use: Array mein pehla element ka index return karta hai jo condition ko satisfy karta hai.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3, 4];
+let index = arr.findIndex((num) => num > 2);
+console.log(index); // 2
+
+
+13. every()
+Use: Check karta hai ki array ke sabhi elements ek specific condition ko satisfy karte hain ya nahi.
+Example:
+javascript
+Copy code
+let arr = [2, 4, 6];
+let allEven = arr.every((num) => num % 2 === 0);
+console.log(allEven); // true
+
+
+14. some()
+Use: Check karta hai ki array ke koi ek ya zyada elements ek specific condition ko satisfy karte hain ya nahi.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3];
+let hasEven = arr.some((num) => num % 2 === 0);
+console.log(hasEven); // true
+
+
+15. includes()
+Use: Check karta hai ki array mein koi specific element present hai ya nahi.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3];
+console.log(arr.includes(2)); // true
+
+
+16. concat()
+Use: Do ya zyada arrays ko merge karta hai aur ek naya array return karta hai.
+Example:
+javascript
+Copy code
+let arr1 = [1, 2];
+let arr2 = [3, 4];
+let combined = arr1.concat(arr2);
+console.log(combined); // [1, 2, 3, 4]
+
+
+17. join()
+Use: Array ke saare elements ko join karke ek string banata hai.
+Example:
+javascript
+Copy code
+let arr = ["Hello", "World"];
+let str = arr.join(" ");
+console.log(str); // "Hello World"
+
+
+18. sort()
+Use: Array ko alphabetically ya numerically sort karta hai (by default as strings).
+Example:
+javascript
+Copy code
+let arr = [3, 1, 4, 2];
+arr.sort();
+console.log(arr); // [1, 2, 3, 4]
+
+
+19. reverse()
+Use: Array ke order ko reverse karta hai.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3];
+arr.reverse();
+console.log(arr); // [3, 2, 1]
+
+
+20. flat()
+Use: Nested arrays ko flatten karta hai.
+Example:
+javascript
+Copy code
+let arr = [1, [2, [3]]];
+let flatArr = arr.flat(2);
+console.log(flatArr); // [1, 2, 3]
