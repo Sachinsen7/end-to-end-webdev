@@ -399,4 +399,21 @@ function customMap(arr, callback) {
 console.log(customMap([1, 2, 3], (x) => x * 2));
 
 
+// 25. Delay Function with setTimeout
+
+function delayMessage(message, delay) {
+  setTimeout(() => {
+    console.log(message);
+  }, delay);
+}
+delayMessage("Hello after 2 seconds", 2000);
+
+
+// 26. Count Words in a Sentence
+
+function countWords(sentence) {
+  return sentence.trim().split(/\s+/).length;
+}
+console.log(countWords("Hey Sachin, how are you today?"));
+
 
