@@ -417,3 +417,47 @@ function countWords(sentence) {
 console.log(countWords("Hey Sachin, how are you today?"));
 
 
+
+// 27. Count Duplicates in Array
+
+function findDuplicates(arr) {
+  let map = {};
+  let result = [];
+
+  for (let item of arr) {
+    map[item] = (map[item] || 0) + 1;
+    if (map[item] === 2) result.push(item);
+  }
+
+  return result;
+}
+console.log(findDuplicates([1, 2, 3, 2, 4, 5, 1, 6]));
+
+
+// 28. Convert CamelCase to Snake_case
+
+
+function camelToSnake(str) {
+  return str.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+}
+console.log(camelToSnake("myFunctionName"));
+
+
+// 29. Find Common Elements in Two Arrays
+
+function commonElements(arr1, arr2) {
+  return arr1.filter((item) => arr2.includes(item));
+}
+console.log(commonElements([1, 2, 3, 4], [2, 4, 5, 6]));
+
+
+// 30. Check if Array is Sorted
+
+function isSorted(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < arr[i - 1]) return false;
+  }
+  return true;
+}
+console.log(isSorted([1, 2, 3, 4])); // true
+console.log(isSorted([5, 3, 1]));   // false
