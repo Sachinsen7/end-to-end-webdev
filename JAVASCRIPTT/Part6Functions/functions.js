@@ -321,3 +321,82 @@ const obj = {
 };
 
 obj.Introduce();
+
+// 18. Count Occurrences of Each Character
+
+function countChars(str) {
+  let result = {};
+  for (let char of str) {
+    result[char] = (result[char] || 0) + 1;
+  }
+  return result;
+}
+console.log(countChars("hello"));
+
+
+//  19. Capitalize First Letter of Each Word
+
+function capitalizeWords(sentence) {
+  return sentence
+    .split(" ")
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(" ");
+}
+console.log(capitalizeWords("hello sachin from india"));
+
+
+// 20. Chunk Array Into Pieces
+
+function chunkArray(arr, size) {
+  let result = [];
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  return result;
+}
+console.log(chunkArray([1, 2, 3, 4, 5], 2));
+
+
+// 21. Validate Email
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+console.log(isValidEmail("test@gmail.com")); // true
+console.log(isValidEmail("sachin")); // false
+
+
+// 22. Generate Random Password
+
+function generatePassword(length) {
+  const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return password;
+}
+console.log(generatePassword(10));
+
+
+// 23. Find Average of Array
+
+function average(arr) {
+  if (!arr.length) return 0;
+  return arr.reduce((a, b) => a + b) / arr.length;
+}
+console.log(average([10, 20, 30, 40]));
+
+// 24. Create a Custom Map Function
+
+function customMap(arr, callback) {
+  let result = [];
+  for (let item of arr) {
+    result.push(callback(item));
+  }
+  return result;
+}
+console.log(customMap([1, 2, 3], (x) => x * 2));
+
+
+
