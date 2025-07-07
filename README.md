@@ -1,4 +1,4 @@
-# Web Development Pro Journey – Hitesh Choudhary (Udemy)
+# Web Development Pro Journey – Hitesh Choudhary
 
 Welcome to my learning journey through the **Web Development Pro** course by [Hitesh Choudhary](https://www.linkedin.com/in/hiteshchoudhary/), available on Udemy! This repository is a reflection of my growth as I build real-world projects, understand core concepts, and become industry-ready as a web developer.
 
