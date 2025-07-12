@@ -4,7 +4,7 @@ Welcome to my learning journey through the **Web Development Pro** course by [Hi
 
 ---
 
-## 📚 About the Course
+##  About the Course
 
 **Web Dev Pro** is a comprehensive course covering:
 
@@ -24,14 +24,14 @@ Welcome to my learning journey through the **Web Development Pro** course by [Hi
 
 This repository is organized by **modules or topics** from the course. Each folder contains:
 
-- 🧠 Source code from my practice  
-- ✅ Completed mini and major projects  
-- 📒 Notes or learnings (wherever applicable)  
-- 🗂️ Clean folder structure for better navigation
+-  Source code from my practice  
+-  Completed mini and major projects  
+-  Notes or learnings (wherever applicable)  
+-  Clean folder structure for better navigation
 
 ---
 
-## ✅ Projects Built
+##  Projects Built
 
 Here are some cool projects I’ve built during the course:
 
@@ -45,25 +45,23 @@ Here are some cool projects I’ve built during the course:
 
 ---
 
-## 🚧 Work in Progress
+##  Work in Progress
 
 This is a live repo — I’ll be updating it **regularly** as I progress through the course. Feel free to **star** it if you want to follow along or learn with me!
 
 ---
 
-## 🙌 Special Thanks
+##  Special Thanks
 
 Big thanks to **Hitesh Choudhary** sir for his amazing teaching style and practical approach to web development.
 
 ---
 
-## 📬 Let's Connect
+##  Let's Connect
 
 - [LinkedIn](https://www.linkedin.com/in/sachin-sen7/)
 - [GitHub](https://github.com/Sachinsen7)
 - [Twitter](https://twitter.com/SachinSen07)
 
 ---
-
-> “Consistency always wins. Learn every day. Build every day.” – Hitesh Choudhary
 
