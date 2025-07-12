@@ -56,8 +56,6 @@ console.log(counter());
 console.log(counter());
 console.log(counter());
 
-//
-
 function Animal() {}
 
 Animal.prototype.makeSound = function () {
