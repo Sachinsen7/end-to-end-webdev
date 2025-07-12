@@ -20,7 +20,7 @@ function func3() {
   });
 }
 
-async function kuchbhi4() {
+async function func4() {
   try {
     let task1 = await func1();
     let task2 = await func2();
@@ -39,7 +39,7 @@ async function kuchbhi4() {
   }
 }
 
-kuchbhi4();
+func4();
 
 // ☝️ edit
 
