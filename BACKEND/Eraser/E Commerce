@@ -1,0 +1,131 @@
+users [icon: user]{
+  _id string pk
+  username string
+  email string
+  password string
+
+}
+
+
+
+products [icon: box]{
+  _id string pk
+  name string
+  description string
+  productImage string
+  price number
+  stock number
+  category ObjectId categories
+  owner ObjectId users
+  createdAt Date
+  updatedAt Date
+}
+
+categories [icon: package]{
+_id string pk 
+name string
+createdAt Date
+updatedAt Date 
+}
+
+orderItems [icon: list]{
+  _id string pk
+  productId ObjectId products
+  quantity number
+
+
+}
+
+orders [icon: list]{
+  _id string pk
+  customer ObjectId users
+  orderItems ObjectId[] orderItems
+  address string
+  status enum "PENDING", "CANCELLED", "DELIEVERD"
+  paymentId string
+  createdAt Date
+  updatedAt Date 
+}
+
+products.category - categories._id
+products.owner - users._id
+orderItems.productId - products._id
+orders.customer - users._id
+orders.orderItems < orderItems._id
+
+
+payments (array)             
+customers (array)            
+firms (array)                
+searchQuery (string)         
+filterType (string)          
+filterValue (string)         
+debouncedFilterValue (string)
+loading (boolean)
+
+
+udharData (array)            
+settlementData (array)       
+customers (array)            
+firms (array)                
+searchQuery (string)         
+filterType (string)          
+filterValue (string)          
+debouncedFilterValue (string)
+loading (boolean)            
+openSettleModal (boolean)    
+settleUdhar (object)         
+tabValue (number) 
+
+| Interactions:                  |
+| - Switch Tab: Click → Update tabValue, Reset filterType/filterValue, Fetch udharData or settlementData |
+| - Search: Type → Update searchQuery → Filter udharData or settlementData (client-side) |
+| - Filter:                      |
+|   ├── Select Type → Update filterType, Reset filterValue, Fetch udharData or settlementData |
+|   ├── Customer: Select → Update filterValue → /getUdharByCustomer or /getUdharSetelmentByCustomer |
+|   ├── Firm (Udhars only): Select → Update filterValue → /getUdharByFirm |
+|   ├── Date: Select → Update filterValue → Click Apply → Debounce → /getUdharByDate or /getUdharSetelmentByDate |
+| - Settle Udhar:                |
+|   ├── Click Settle → Open modal, Set settleUdhar |
+|   ├── Input Amount → Update settleUdhar.amount |
+|   ├── Save → Validate, POST /setelUdhar, Refresh udharData & settlementData |
+|   ├── Cancel → Close modal     |
+| - Remove Udhar: Click → Disabled, Trigger toast error |
+
+ GET /getAllUdhar → udharData |
+| - GET /getAllUdharSetelment → settlementData |
+| - GET /getAllCustomers → customers |
+| - GET /getAllFirms → firms     |
+| - GET /getUdharByCustomer → udharData |
+| - GET /getUdharByFirm → udharData |
+| - GET /getUdharByDate → udharData |
+| - GET /getUdharSetelmentByCustomer → settlementData |
+| - GET /getUdharSetelmentByDate → settlementData |
+| - POST /setelUdhar → Refresh data |
+| - GET /removeUdhar → (not implemented) |
+
+
+/getAllUdhar
+/getAllUdharSetelment
+/getAllCustomers
+/getAllFirms
+/getUdharByCustomer
+/getUdharByFirm
+/getUdharByDate
+/getUdharSetelmentByCustomer
+/getUdharSetelmentByDate
+/setelUdhar
+/removeUdhar (placeholder)
+
+
+
+
+
+
+
+
+
+
+
+
+

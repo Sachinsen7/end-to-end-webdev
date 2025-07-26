@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Jokes</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="joke-container">
+      <header>
+        <h1>Joke of the day</h1>
+        <p>Because everyone needs a good laugh</p>
+      </header>
+
+      <main>
+        <p id="joke-text" class="hidden">Click below to get a joke!</p>
+        <div id="jokeDisplay"></div>
+      </main>
+
+      <div id="controls">
+        <button id="get-joke">Get Joke</button>
+        <button id="favorites" onclick="addToFavorites()">
+          Add to Favorites
+        </button>
+        <button id="share" onclick="shareJoke()">Share</button>
+      </div>
+
+      <div id="favorites">
+        <h2>Favorites</h2>
+        <ul id="favorite-jokes" class="hidden"></ul>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
