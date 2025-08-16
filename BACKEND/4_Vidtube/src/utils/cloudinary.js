@@ -25,7 +25,7 @@ const uploadOnCloudinary = async (loacalPath) => {
 
     console.log(
       "File Uploaded in cloaudinary seuccessfully, File Path:",
-      response
+      response.url
     );
 
     // once the file is uploaded, we would like to delete it from the server
