@@ -63,7 +63,7 @@ app.delete("/teas/:id", (req, res) => {
   }
 
   teaArray.splice(index, 1);
-  res.status(200).send("deleted");
+  return res.status(200).send("deleted");
 });
 
 app.listen(port, () => {
