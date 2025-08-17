@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="main-wrapper">
+      <header>
+        <h1>QuizMaster</h1>
+      </header>
+      <main>
+        <div id="quiz-card">
+          <div id="start-screen" class="hidden">
+            <h2>Welcome to QuizMaster!</h2>
+            <p id="quiz-description" class="hidden">
+              Test your knowledge with our fun and interactive quiz.
+            </p>
+            <button id="start-quiz" class="btn-primary">Start Quiz</button>
+          </div>
+          <div id="quiz-container" class="hidden">
+            <h2 id="question-text"></h2>
+            <ul id="choices-list"></ul>
+            <div class="button-group">
+              <button id="previous-btn" class="btn-secondary hidden">
+                Previous
+              </button>
+              <button id="nxt-btn" class="btn-primary hidden">Next</button>
+              <button id="submit-btn" class="btn-primary hidden">Submit</button>
+            </div>
+          </div>
+          <div id="result-container" class="hidden">
+            <h2>Your Results</h2>
+            <p id="score"></p>
+            <button id="restart-btn" class="btn-secondary">Restart Quiz</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <p>&copy; 2025 QuizMaster | All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
