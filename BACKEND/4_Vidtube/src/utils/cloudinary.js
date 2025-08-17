@@ -22,6 +22,7 @@ const uploadOnCloudinary = async (localPath) => {
     if (!localPath) return null;
     const normalizedPath = path.resolve(localPath).replace(/\\/g, "/");
     console.log("Normalized Path: ", normalizedPath);
+
     const response = await cloudinary.uploader.upload(normalizedPath, {
       resource_type: "auto",
     });
