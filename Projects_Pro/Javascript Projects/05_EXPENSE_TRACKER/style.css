@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a772bb, #3b1e54);
+  color: #333;
+}
+
+#container {
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+#container:hover {
+  transform: scale(1.02);
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #3b1e54;
+}
+
+#expense-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#expense-name,
+#expense-amount {
+  outline: none;
+  border: 2px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f7f5fa;
+  transition: border-color 0.3s;
+}
+#expense-name:focus,
+#expense-amount:focus {
+  border-color: #a772bb;
+}
+
+button {
+  padding: 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #a772bb;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+button:hover {
+  background-color: #3b1e54;
+  box-shadow: 0px 4px 12px rgba(59, 30, 84, 0.4);
+}
+
+#total {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #3b1e54;
+}
+
+#expense-list li {
+  list-style: none;
+  font-size: 18px;
+  margin-bottom: 12px;
+  background-color: #f7f5fa;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+#expense-list li:hover {
+  transform: translateX(5px);
+}
+
+#expense-list li button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f87a53;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#expense-list li button:hover {
+  background-color: #e74c3c;
+}
+
+#hidden {
+  display: none;
+}
