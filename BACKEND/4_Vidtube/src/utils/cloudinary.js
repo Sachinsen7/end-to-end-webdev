@@ -1,6 +1,7 @@
 import { v2 as cloudinary } from "cloudinary";
 import dotenv from "dotenv";
 import fs from "fs";
+import path from "path";
 
 dotenv.config();
 
@@ -10,7 +11,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const uploadOnCloudinary = async (loacalPath) => {
+const uploadOnCloudinary = async (localPath) => {
   try {
     console.log("Cloudinary Config: ", {
       cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -18,8 +19,10 @@ const uploadOnCloudinary = async (loacalPath) => {
       api_secret: process.env.CLOUDINARY_API_SECRET,
     });
 
-    if (!loacalPath) return null;
-    const response = await cloudinary.uploader.upload(loacalPath, {
+    if (!localPath) return null;
+    const normalizedPath = path.resolve(localPath).replace(/\\/g, "/");
+    console.log("Normalized Path: ", normalizedPath);
+    const response = await cloudinary.uploader.upload(normalizedPath, {
       resource_type: "auto",
     });
 
@@ -30,10 +33,11 @@ const uploadOnCloudinary = async (loacalPath) => {
 
     // once the file is uploaded, we would like to delete it from the server
 
-    fs.unlinkSync(loacalPath);
+    fs.unlinkSync(localPath);
     return response;
   } catch (error) {
-    fs.unlinkSync(loacalPath);
+    console.error("Cloudinary upload error:", error.message || error);
+    if (fs.existsSync(localPath)) fs.unlinkSync(localPath);
     return null;
   }
 };
@@ -42,11 +46,11 @@ const deleteFromCloudinary = async (publicId) => {
   try {
     const result = cloudinary.uploader.destroy(publicId);
     console.log(
-      "file deletd from cloudinary successfully, File Path:",
+      "file deleted from cloudinary successfully, File Path:",
       publicId
     );
   } catch (error) {
-    comsole.error("error detecting file from cloudinary: ", error);
+    comsole.error("error deleting file from cloudinary: ", error);
     return null;
   }
 };
