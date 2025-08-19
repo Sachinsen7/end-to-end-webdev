@@ -1,0 +1,15 @@
+[
+  {
+    "$group": {
+      "_id": "$company.location.country",
+      "userCount": {
+        "$sum": 1
+      }
+    }
+  },
+  {
+    "$sort": {
+      "userCount": -1
+    }
+  }
+]
