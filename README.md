@@ -1,4 +1,4 @@
-# Web Development Pro Journey – Hitesh Choudhary
+# Web Development Pro
 
 Welcome to my learning journey through the **Web Development Pro** course by [Hitesh Choudhary](https://www.linkedin.com/in/hiteshchoudhary/), available on Udemy! This repository is a reflection of my growth as I build real-world projects, understand core concepts, and become industry-ready as a web developer.
 
@@ -16,7 +16,7 @@ Welcome to my learning journey through the **Web Development Pro** course by [Hi
 - Backend Basics (Node.js, Express, MongoDB)  
 - Full Stack Projects  
 - Deployment and Optimization  
-- Career Guidance from Hitesh Bhaiya  
+- Mongo Db Advance Pipeline - [Advanve MD](https://github.com/Sachinsen7/Full-Stack-Development/tree/main/MongoDb%20Advance)
 
 ---
 
@@ -64,4 +64,5 @@ Big thanks to **Hitesh Choudhary** sir for his amazing teaching style and practi
 - [Twitter](https://twitter.com/SachinSen07)
 
 ---
+
 
