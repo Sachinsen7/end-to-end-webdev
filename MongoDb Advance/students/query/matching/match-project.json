@@ -1,0 +1,14 @@
+[
+  {
+    "$match": {
+      "isActive": false,
+      "tags": "enim"
+    }
+  },
+  {
+    "$project": {
+      "name": 1,
+      "age": 1
+    }
+  }
+]
