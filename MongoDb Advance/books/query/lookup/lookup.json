@@ -1,0 +1,17 @@
+[
+  {
+    "$lookup": {
+      "from": "authors",
+      "localField": "author_id",
+      "foreignField": "_id",
+      "as": "authors_details"
+    }
+  },
+  {
+    "$addFields": {
+      "authors_details": {
+        "$arrayElemAt": ["$authors_details", 0]
+      }
+    }
+  }
+]
