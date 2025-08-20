@@ -39,7 +39,7 @@ router.post("/refresh-token", refreshAccessToken);
 router.post("/logout", verifyJWT, logoutUser);
 router.post("/change-password", verifyJWT, changeCurrentPassword);
 router.get("/current-user", verifyJWT, getCurrentUser);
-router.get("/c:username", verifyJWT, getUserChannelProfile);
+router.get("/c/:username", verifyJWT, getUserChannelProfile);
 router.patch("/update-account", verifyJWT, updateAccountDetails);
 router.patch(
     "/update-avatar",
@@ -53,6 +53,6 @@ router.patch(
     upload.single("coverImage"),
     updateCoverImage
 );
-router.get("/history, verifyJWT", getWatchHistory);
+router.get("/history", verifyJWT, getWatchHistory);
 
 export default router;
