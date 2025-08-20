@@ -7,7 +7,7 @@ import {
 } from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/apiResponse.js";
 import jwt from "jsonwebtoken";
-import { subscribe } from "diagnostics_channel";
+import mongoose from "mongoose";
 
 const generateAccessTokenAndRefreshToken = async (userId) => {
     try {
@@ -17,7 +17,7 @@ const generateAccessTokenAndRefreshToken = async (userId) => {
             throw new ApiError(404, "User not found");
         }
 
-        const accessToken = user.generateRefreshToken();
+        const accessToken = user.generateAccessToken();
         const refreshToken = user.generateRefreshToken();
 
         user.refreshToken = refreshToken;
@@ -309,7 +309,7 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
         {
             $set: {
                 fullName,
-                email: email.toLowerCase(),
+                email: email,
             },
         },
         { new: true }
@@ -345,7 +345,7 @@ const updateUserAvatar = asyncHandler(async (req, res) => {
             },
         },
         { new: true }
-    ).select("-password, -refreshToken");
+    ).select("-password -refreshToken");
 
     await user.save({ validateBeforeSave: false });
 
@@ -422,11 +422,9 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
                 subscribedToCount: { $size: "$subscribedTo" },
                 isSubscribed: {
                     $cond: {
-                        if: {
-                            $in: [req.user._id, "$subscribers.subscriber"],
-                            then: true,
-                            else: false,
-                        },
+                        if: { $in: [req.user._id, "$subscribers.subscriber"] },
+                        then: true,
+                        else: false,
                     },
                 },
             },
@@ -451,7 +449,7 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
 
     return res
         .status(200)
-        .json(new ApiResponse(200, channel[0]), "Channel found");
+        .json(new ApiResponse(200, channel[0], "Channel found"));
 });
 
 const getWatchHistory = asyncHandler(async (req, res) => {
@@ -500,8 +498,7 @@ const getWatchHistory = asyncHandler(async (req, res) => {
     return res
         .status(200)
         .json(
-            new ApiResponse(200, user[0].watchHistory),
-            "Watch history found"
+            new ApiResponse(200, user[0].watchHistory, "Watch history found")
         );
 });
 
