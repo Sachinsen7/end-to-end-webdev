@@ -18,6 +18,20 @@ function createCourse(): { name: string; price: number } {
   return { name: "nextjs", price: 388 };
 }
 
-// Type alias
+//********* */ Type alias
+
+type User = {
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+
+type MyString = string; ///
+
+function createUserr(user: User) {
+  return {};
+}
+
+createUserr({ name: "", email: "", isActive: true });
 
 export {};
