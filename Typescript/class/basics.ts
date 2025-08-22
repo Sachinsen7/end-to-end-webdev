@@ -10,5 +10,5 @@ class Usern {
   }
 }
 
-const sachinnn = new User("se", "sachin");
-sachin.city = "Mumbai";
+const sachinnn = new Usern("se", "sachin");
+sachinnn.city = "Mumbai";
