@@ -1,13 +1,13 @@
-type User = {
-  readonly _id: string; // readonly
+type Userr = {
+  readonly id: string; // readonly
   name: string;
   email: string;
   isActive: boolean;
   creditCardDetails?: number; // optional
 };
 
-let myUser: User = {
-  _id: "1234",
+let myUser: Userr = {
+  id: "1234",
   name: "sachin",
   email: "sachin@in",
   isActive: false,
