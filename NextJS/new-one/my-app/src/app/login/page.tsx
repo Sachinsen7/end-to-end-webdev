@@ -54,7 +54,7 @@ export default function LoginPage() {
 
       <label htmlFor="password">password</label>
       <input
-        type="text"
+        type="password"
         id="password"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
