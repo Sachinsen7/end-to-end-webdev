@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     // save user
 
-    const newUser = await UserModel.create({
+    const newUser = new UserModel({
       username: username,
       email,
       password: hashedPassword,
