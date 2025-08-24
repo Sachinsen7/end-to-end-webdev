@@ -59,7 +59,7 @@ export default function LoginPage() {
           value={user.email}
           onChange={(e) => setUser({ ...user, email: e.target.value })}
           placeholder="Enter your email"
-          className="mt-1 mb-4 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="mt-1 mb-4 w-full rounded-lg border text-black border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         {/* Password */}
@@ -75,7 +75,7 @@ export default function LoginPage() {
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
           placeholder="Enter your password"
-          className="mt-1 mb-6 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="mt-1 mb-6 w-full rounded-lg text-black border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         {/* Button */}
