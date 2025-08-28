@@ -313,7 +313,7 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
             },
         },
         { new: true }
-    ).select("-password, -refreshToken");
+    ).select("-password -refreshToken");
 
     await user.save({ validateBeforeSave: false });
 
@@ -378,7 +378,7 @@ const updateCoverImage = asyncHandler(async (req, res) => {
             },
         },
         { new: true }
-    ).select("-password, -refreshToken");
+    ).select("-password -refreshToken");
 
     await user.save({ validateBeforeSave: false });
 
