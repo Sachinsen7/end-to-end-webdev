@@ -1,7 +1,7 @@
 import mongoose, { isValidObjectId } from "mongoose";
-import playlistModel, { Playlist } from "../models/playlist.model.js";
-import { ApiError } from "../utils/ApiError.js";
-import { ApiResponse } from "../utils/ApiResponse.js";
+import playlistModel from "../models/playlist.model.js";
+import { ApiError } from "../utils/apiError.js";
+import { ApiResponse } from "../utils/apiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import VideoModel from "../models/video.model.js";
 
@@ -115,7 +115,7 @@ const deletePlaylist = asyncHandler(async (req, res) => {
     if (!isValidObjectId(playlistId))
         throw new ApiError(400, "Invalid playlist ID");
 
-    const playlist = await Playlist.findById(playlistId);
+    const playlist = await playlistModel.findById(playlistId);
     if (!playlist) throw new ApiError(404, "Playlist not found");
 
     await playlist.deleteOne();
@@ -131,7 +131,7 @@ const updatePlaylist = asyncHandler(async (req, res) => {
     if (!isValidObjectId(playlistId))
         throw new ApiError(400, "Invalid playlist ID");
 
-    const playlist = await Playlist.findById(playlistId);
+    const playlist = await playlistModel.findById(playlistId);
     if (!playlist) throw new ApiError(404, "Playlist not found");
 
     if (name) playlist.name = name;
