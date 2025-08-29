@@ -1,9 +1,9 @@
 import mongoose, { mongo } from "mongoose";
-import commentModel from "../models/comment.model";
-import { ApiError } from "../utils/apiError";
-import { ApiResponse } from "../utils/apiResponse";
-import { asyncHandler } from "../utils/asyncHandler";
-import VideoModel from "../models/video.model";
+import commentModel from "../models/comment.model.js";
+import { ApiError } from "../utils/apiError.js";
+import { ApiResponse } from "../utils/apiResponse.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import VideoModel from "../models/video.model.js";
 
 const getVideoComments = asyncHandler(async (req, res) => {
     const { videoId } = req.params;
