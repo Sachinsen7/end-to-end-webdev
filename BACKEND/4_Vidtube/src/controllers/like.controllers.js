@@ -1,7 +1,7 @@
 import mongoose, { isValidObjectId } from "mongoose";
-import likeModel, { Like } from "../models/like.model.js";
-import { ApiError } from "../utils/ApiError.js";
-import { ApiResponse } from "../utils/ApiResponse.js";
+import likeModel from "../models/like.model.js";
+import { ApiError } from "../utils/apiError.js";
+import { ApiResponse } from "../utils/apiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import VideoModel from "../models/video.model.js";
 import TweetModel from "../models/tweet.model.js";
@@ -103,7 +103,8 @@ const toggleTweetLike = asyncHandler(async (req, res) => {
 const getLikedVideos = asyncHandler(async (req, res) => {
     const userId = req.user?._id;
 
-    const likes = await Like.find({ likedby: userId, video: { $ne: null } })
+    const likes = await likeModel
+        .find({ likedby: userId, video: { $ne: null } })
         .populate("video")
         .sort({ createdAt: -1 });
 
