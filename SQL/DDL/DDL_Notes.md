@@ -57,11 +57,3 @@ Here are the primary DDL commands with explanations and examples. I'll keep the 
   ```sql
   TRUNCATE TABLE products;
   ```
-- Notes: This resets any auto-increment counters and is often used to clear data for testing. Unlike DROP, the table structure remains intact.
-
-## Tips from the Videos
-
-- Always back up your database before running DDL commands, especially ALTER or DROP.
-- DDL commands are case-insensitive in most SQL dialects (e.g., PostgreSQL, MySQL), but object names might be case-sensitive depending on the DB.
-- Practice in a test environment to avoid messing up production data.
-- Hitesh emphasizes understanding schema design early on—good DDL leads to efficient queries later.
