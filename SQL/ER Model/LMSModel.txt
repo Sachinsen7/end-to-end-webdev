@@ -1,0 +1,50 @@
+user [icon: user]{
+  _id string pk
+  name string
+  email string unique
+  password string
+  userType enum "studen", "instructor", "admin"
+  isPaid boolean
+  enrolledCourses ObjectId[] courses
+  createdAt Date
+  updatedAt Date
+}
+
+courses [icon: book]{
+_id string pk
+title string
+description string
+price number
+instructorId ObjectId[] users
+category string
+tags string[]
+durationInHours number
+videos ObjectId videos
+createdAt Date
+updatedAt Data
+}
+
+videos[icons: video]{
+_id string pk
+courseId ObjectId courses
+title string 
+description string
+durationInMinutes number
+createdAt Date
+updatedAt Date
+}
+
+enrollments [icons: user]{
+_id string pk
+userId ObjectId users
+courseId ObjectId courses
+enrollmentDate Date
+progress number
+completedAt Date
+createdAt Date
+updatedAt Date
+}
+
+user._id < enrollments.userId
+// enrollments.userId - user._id
+
