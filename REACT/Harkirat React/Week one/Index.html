@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
-</head>
-<body>
+  </head>
+  <body>
     <div id="btnContainer">
-        <button>Counter</button>
+      <button>Counter</button>
     </div>
 
     <script>
+      let state = {
+        count: 0,
+      };
 
-        let state = {
-            count: 0
-        }
+      function onButtonPress() {
+        state.count++;
+        buttonComponentRerender();
+      }
 
-        function onButtonPress(){
-            state.count++
-            buttonComponentRerender()
-        }
+      function buttonComponentRerender() {
+        document.getElementById("btnContainer").innerHTML = "";
+        const component = buttonComponent(state.count);
+        document.getElementById("btnContainer").appendChild(component);
+      }
 
+      function buttonComponent(count) {
+        const button = document.createElement("button");
+        button.innerHTML = `Counter ${count}`;
+        button.setAttribute("onClick", `onButtonPress()`);
+        return button;
+      }
 
-        function buttonComponentRerender(){
-            document.getElementById('btnContainer').innerHTML = "";
-            const component = buttonComponent(state.count)
-            document.getElementById('btnContainer').appendChild(component)
-        }
-
-        function buttonComponent(count){
-            const button = document.createElement('button')
-            button.innerHTML = `Counter ${count}`
-            button.setAttribute("onClick", `onButtonPress()`)
-            return button
-        }
-
-        buttonComponentRerender()
+      buttonComponentRerender();
     </script>
-</body>
+  </body>
 </html>
