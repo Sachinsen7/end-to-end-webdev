@@ -1,0 +1,13 @@
+{
+  "name": "assignments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index-middleware.js",
+  "scripts": {
+    "start": "node index2-middleware.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
