@@ -4,6 +4,27 @@
   Home Page
 {% endblock %}
 
-{% block content %}
+
+<div class='grid grid-cols-3 gap-4 m-4'>
+  {% block content %}
   <h1>all albus | albus page</h1>
+
+  {% for tea in teas  %}
+
+  <div class="tea-item bg-sky-600 p-5 rounded">
+      <img src="{{tea.image.url}}" alt="">
+      <h3 class='text-2xl font-bold '>{{tea.name}}</h3>
+      <a href="{% url 'tea_details' tea.id %}">
+        <button 
+        type="button"
+        class="bg-yellow-200 text-black font-bold p-2 rounded-lg mt-4 cursor-pointer">
+          {{tea.type}} - {{tea.id}}
+        </button>
+      </a>
+  </div>
+{% endfor %}
+</div>
+
+
 {% endblock %}
+
