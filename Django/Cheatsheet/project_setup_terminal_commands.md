@@ -6,7 +6,7 @@ This guide covers the essential commands to initialize a Django project using uv
 
 First, ensure you have Python and uv installed. If you don't have uv, you can install it using pip:
 
-Bash
+bash
 
 pip install uv
 
