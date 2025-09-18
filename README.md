@@ -115,6 +115,3 @@ Full-Stack-Development/
 * Add test cases for backend projects
 * Expand with TypeScript projects
 
----
-
-Would you like me to **personalize this README** further to match your exact repo (like listing each project with folder links), or should I keep it more general like above?
