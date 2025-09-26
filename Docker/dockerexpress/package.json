@@ -1,0 +1,19 @@
+{
+  "name": "dockerexpress",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "sachin"
+  ],
+  "license": "ISC",
+  "author": "sachin sen",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
