@@ -1,0 +1,36 @@
+{
+  "name": "fastify-project",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000f\u0000a\u0000s\u0000t\u0000i\u0000f\u0000y\u0000-\u0000p\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000\r\u0000 \u0000",
+  "homepage": "https://github.com/Sachinsen7/fastify-project#readme",
+  "bugs": {
+    "url": "https://github.com/Sachinsen7/fastify-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sachinsen7/fastify-project.git"
+  },
+  "license": "ISC",
+  "author": "sachin sen",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/env": "^5.0.2",
+    "@fastify/jwt": "^10.0.0",
+    "@fastify/multipart": "^9.2.1",
+    "@fastify/sensible": "^6.0.3",
+    "@fastify/static": "^8.2.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.2",
+    "fastify": "^5.6.0",
+    "fastify-plugin": "^5.0.1",
+    "mongoose": "^8.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
