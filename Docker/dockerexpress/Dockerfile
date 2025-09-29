@@ -1,18 +1,20 @@
-FROM node:22-alpine
+# stage one 
 
-# use an official image of node js runtime
+FROM node:22-alpine AS builder
+
 WORKDIR /app
 
-# set the working directory inside the container
 COPY package*.json ./
-
-# copy the package.json file to the working directory
 RUN npm install
-
-# install dependencies
 COPY . .
 
-# copy the rest of the application code to the working directory
-ENV PORT=3000
 
-CMD ["node", "index.js"]
+# stage two - production stage
+FROM node:22-alpine
+WORKDIR /app 
+COPY --from=builder /app /app
+EXPOSE 3000
+ENV PORT=3000
+CMD ["node", "server.js"]
+
+
